@@ -1,0 +1,290 @@
+:root {
+    --bg-dark: #000000;
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --gold: #d4af37;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-luxury: 'Cinzel', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Apple style helpers */
+.mt-4 { margin-top: 2rem; }
+.text-dim { color: var(--text-secondary); }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* HERO SECTION */
+.hero-sequence-container {
+    height: 400vh; /* creates scrolling room to pin the hero */
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain; /* ensures images fit properly */
+    z-index: 1;
+}
+
+.hero-text-overlay {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    padding-left: 5%;
+    z-index: 10;
+    opacity: 0; /* hidden by default */
+    pointer-events: none;
+}
+
+#feature-1,
+#feature-2,
+#feature-3 {
+    bottom: 15%; /* Bottom-left */
+}
+
+.hero-title {
+    font-family: var(--font-luxury);
+    font-size: 4.5vw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    perspective: 1000px;
+}
+
+.title-line {
+    overflow: hidden;
+}
+
+.title-text {
+    display: inline-block;
+    transform: translateY(100%);
+    will-change: transform;
+}
+
+.hero-feature-title {
+    font-family: var(--font-luxury);
+    font-size: 3vw;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+}
+
+.hero-feature-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* DETAILS & PRICE SECTION */
+.details-section {
+    position: relative;
+    padding: 12rem 0 6rem 0;
+    background: #000;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.details-container {
+    display: flex;
+    justify-content: center;
+}
+
+.details-text-wrapper {
+    max-width: 800px;
+    text-align: center;
+}
+
+.details-headline {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.details-body {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 2rem;
+    font-weight: 400;
+}
+
+.price-reveal {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 3rem;
+}
+
+.price-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.price-value {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(180deg, #fff, #a1a1a6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* MARQUEE */
+.marquee-wrapper {
+    margin-top: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.05;
+}
+
+.marquee-text {
+    display: inline-block;
+    font-size: 15vw;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-primary);
+}
+
+/* SPECS SECTION */
+.specs-section {
+    display: flex;
+    min-height: 100vh;
+    background: #000;
+    padding: 10rem 5%;
+}
+
+.specs-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 4rem;
+}
+
+.specs-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 4rem;
+    letter-spacing: -0.02em;
+}
+
+.specs-list {
+    display: grid;
+    gap: 3rem;
+}
+
+.spec-item {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+}
+
+.spec-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.spec-item p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.specs-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.spec-image-box {
+    width: 100%;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.spec-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    will-change: transform;
+}
+
+/* Base utility classes for animation */
+.apple-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    will-change: transform, opacity;
+}
+
+.apple-reveal-img {
+    opacity: 0;
+    clip-path: inset(100% 0 0 0);
+    will-change: transform, opacity, clip-path;
+}
+
+@media (max-width: 900px) {
+    .specs-section {
+        flex-direction: column;
+    }
+    .specs-left {
+        padding-right: 0;
+        margin-bottom: 4rem;
+    }
+    .hero-title {
+        font-size: 12vw;
+    }
+    .details-headline {
+        font-size: 3rem;
+    }
+}
