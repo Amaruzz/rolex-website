@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const frameCount = 240;
     const currentFrame = index => (
-      `public/images/herosection/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.png`
+      `assets/images/herosection/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.png`
     );
 
     const images = [];
